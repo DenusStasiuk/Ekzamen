@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="lab_4">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>ЕКзаменаційне завдання</title>
+</head>
+
+<body>
+    <header>
+        <h1>Задача 11</h1>
+    </header>
+    <main>
+
+        <div class='itm-col-l' ng-controller='toShowController as toShowCntr'>
+            <h2>items to buy</h2>
+            <div ng-if="toShowCntr.toShowItems.length == 0">
+                there no items in list
+            </div>
+            <div class='itm-lst'>
+                <div class="itm-elem">
+                    <div ng-repeat="item in toShowCntr.toShowItems">
+                        {{item.name}}
+                    </div>
+                </div>
+                <div class="itm-elem">
+                    <div ng-repeat="item in toShowCntr.toShowItems">
+                        в наявності: {{item.amount}}
+                    </div>
+                </div>
+                <div class="itm-elem">
+                    <div ng-repeat="item in toShowCntr.toShowItems">
+                        <button ng-click="toShowCntr.addToDeleteItem($index)" > Видалити </button>
+                    </div>
+                </div>
+                <div class="itm-elem">
+                    <div ng-repeat="item in toShowCntr.toShowItems">
+                        <button ng-click="toShowCntr.addToHideItem($index)" > Приховати </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
